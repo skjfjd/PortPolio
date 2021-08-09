@@ -12,6 +12,11 @@ document.addEventListener('scroll', () => {
         navbar.classList.remove('navbar--dark');
     }
 });
+// Navbar toggle button for small screen
+const toggleBtn = document.querySelector('.navbar__toggle-btn');
+toggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
 
 // Handle scrolling when tapping on the navbar menu
 
@@ -23,7 +28,7 @@ navbarMenu.addEventListener('click', (event) => {
     if (link == null) {
         return;
     }
-
+    navbarMenu.classList.remove('open');
    scrollIntoView(link);
 });
 
@@ -85,7 +90,6 @@ workBtnContainer.addEventListener('click', (e) => {
         projectContainer.classList.remove('anim-out');
     }, 300);
 });
-
 
 
 function scrollIntoView(selector) {
